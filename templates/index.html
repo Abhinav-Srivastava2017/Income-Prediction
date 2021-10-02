@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Predictor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+
+<body class="container-fluid d-flex min-vh-100 align-items-center justify-content-center">
+  <div class="col-md-5 card shadow-lg">
+    <h3 class="display-4 text-center mb-3 bg-primary text-white">Income Prediction Form</h3>
+    <div class="container">
+      <form action="/result" method="POST">
+        <div class="input-group mb-2">
+          <span for="age" class="input-group-text">Age</span>
+          <input type="number" min="0" max="110" id="age" name="age" class="form-control" required>
+        </div>
+        <div class="input-group mb-2">
+          <span for="w_class" class="input-group-text">Working Class</span>
+          <select id="w_class" name="w_class" class="form-select" required>
+            <option value="0">Federal-gov</option>
+            <option value="1">Local-gov</option>
+            <option value="2">Never-worked</option>
+            <option value="3">Private</option>
+            <option value="4">Self-emp-inc</option>
+            <option value="5">Self-emp-not-inc</option>
+            <option value="6">State-gov</option>
+            <option value="7">Without-pay</option>
+          </select>
+        </div>
+        <div class="input-group mb-2">
+          <span for="edu" class="input-group-text">Education</span>
+          <select id="edu" name="edu" class="form-select" required>
+            <option value="0">10th</option>
+            <option value="1">11th</option>
+            <option value="2">12th</option>
+            <option value="3">1st-4th</option>
+            <option value="4">5th-6th</option>
+            <option value="5">7th-8th</option>
+            <option value="6">9th</option>
+            <option value="7">Assoc-acdm</option>
+            <option value="8">Assoc-voc</option>
+            <option value="9">Bachelors</option>
+            <option value="10">Doctorate</option>
+            <option value="11">HS-grad</option>
+            <option value="12">Masters</option>
+            <option value="13">Preschool</option>
+            <option value="14">Prof-school</option>
+            <option value="15">16 - Some-college</option>
+          </select>
+        </div>
+        <div class="input-group mb-2">
+          <span for="martial_stat" class="input-group-text">Marital Status</span>
+          <select id="martial_stat" name="martial_stat" class="form-select" required>
+            <option value="0">divorced</option>
+            <option value="1">married</option>
+            <option value="2">not married</option>
+          </select>
+        </div>
+        <div class="input-group mb-2">
+          <span for="occup" class="input-group-text">Occupation</span>
+          <select id="occup" name="occup" class="form-select" required>
+            <option value="0">Adm-clerical</option>
+            <option value="1">Armed-Forces</option>
+            <option value="2">Craft-repair</option>
+            <option value="3">Exec-managerial</option>
+            <option value="4">Farming-fishing</option>
+            <option value="5">Handlers-cleaners</option>
+            <option value="6">Machine-op-inspct</option>
+            <option value="7">Other-service</option>
+            <option value="8">Priv-house-serv</option>
+            <option value="9">Prof-specialty</option>
+            <option value="10">Protective-serv</option>
+            <option value="11">Sales</option>
+            <option value="12">Tech-support</option>
+            <option value="13">Transport-moving</option>
+          </select>
+        </div>
+        <div class="input-group mb-2">
+          <span for="relation" class="input-group-text">Relationship</span>
+          <select id="relation" name="relation" class="form-select" required>
+            <option value="0">Husband</option>
+            <option value="1">Not-in-family</option>
+            <option value="2">Other-relative</option>
+            <option value="3">Own-child</option>
+            <option value="4">Unmarried</option>
+            <option value="5">Wife</option>
+          </select>
+        </div>
+        <div class="input-group mb-2">
+          <span for="race" class="input-group-text">Race</span>
+          <select id="race" name="race" class="form-select" required>
+            <option value="0">Amer Indian Eskimo</option>
+            <option value="1">Asian Pac Islander</option>
+            <option value="2">Black</option>
+            <option value="3">Other</option>
+            <option value="4">White</option>
+          </select>
+        </div>
+        <div class="input-group mb-2">
+          <span for="gender" class="input-group-text">Gender</span>
+          <select id="gender" name="gender" class="form-select" required>
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+          </select>
+        </div>
+        <div class="input-group mb-2">
+          <span for="c_gain" class="input-group-text">Capital Gain </span>
+          <input type="number" min="0" max="99999" id="c_gain" name="c_gain" class="form-control" required>
+          <span class="input-group-text">btw:[0-99999]</span>
+        </div>
+        <div class="input-group mb-2">
+          <span for="c_loss" class="input-group-text">Capital Loss </span>
+          <input type="number" min="0" max="4356" id="c_loss" name="c_loss" class="form-control" required>
+          <span class="input-group-text">btw:[0-4356]</span>
+        </div>
+        <div class="input-group mb-2">
+          <span for="hours_per_week" class="input-group-text">Hours per Week </span>
+          <input type="number" min="1" max="99" id="hours_per_week" name="hours_per_week" class="form-control" required>
+          <span class="input-group-text">btw:[1-99]</span>
+        </div>
+        <div class="input-group mb-2">
+          <span for="native-country" class="input-group-text">Native Country</span>
+          <select id="native-country" name="native-country" class="form-select" required>
+            <option value="0">Cambodia</option>
+            <option value="1">Canada</option>
+            <option value="2">China</option>
+            <option value="3">Columbia</option>
+            <option value="4">Cuba</option>
+            <option value="5">Dominican Republic</option>
+            <option value="6">Ecuador</option>
+            <option value="7">El Salvadorr</option>
+            <option value="8">England</option>
+            <option value="9">France</option>
+            <option value="10">Germany</option>
+            <option value="11">Greece</option>
+            <option value="12">Guatemala</option>
+            <option value="13">Haiti</option>
+            <option value="14">Netherlands</option>
+            <option value="15">Honduras</option>
+            <option value="16">HongKong</option>
+            <option value="17">Hungary</option>
+            <option value="18">India</option>
+            <option value="19">Iran</option>
+            <option value="20">Ireland</option>
+            <option value="21">Italy</option>
+            <option value="22">Jamaica</option>
+            <option value="23">Japan</option>
+            <option value="24">Laos</option>
+            <option value="25">Mexico</option>
+            <option value="26">Nicaragua</option>
+            <option value="27">Outlying-US(Guam-USVI-etc)</option>
+            <option value="28">Peru</option>
+            <option value="29">Philippines</option>
+            <option value="30">Poland</option>
+            <option value="11">Portugal</option>
+            <option value="32">Puerto-Rico</option>
+            <option value="33">Scotland</option>
+            <option value="34">South</option>
+            <option value="35">Taiwan</option>
+            <option value="36">Thailand</option>
+            <option value="37">Trinadad&Tobago</option>
+            <option value="38">United States</option>
+            <option value="39">Vietnam</option>
+            <option value="40">Yugoslavia</option>
+          </select>
+        </div>
+        <div class="d-grid gap-2"><button type="submit" class="btn btn-outline-primary btn-lg my-2">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
