@@ -62,7 +62,7 @@ rfc = RandomForestClassifier(random_state=42, criterion="gini", max_depth=8, n_e
 rfc.fit(X_train, y_train)
 y_pred = rfc.predict(X_test)
 
-print ("Desicion Tree using Random Forest Classifier (best Parameters found using gridSearch\nAccuracy is ", accuracy_score(y_test,y_pred)*100 )
+print ("Classification using Random Forest Classifier (best Parameters found using gridSearch\nAccuracy is ", accuracy_score(y_test,y_pred)*100 )
 
 #creating and training a model
 #serializing our model to a file called model.pkl
